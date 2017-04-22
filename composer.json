@@ -1,5 +1,5 @@
 {
-    "name": "moonlight/laravel-oss",
+    "name": "qi-yu/laravel-oss",
     "description": "Aliyun OSS service provider for Laravel.",
     "type": "library",
     "license": "WTFPL",
