@@ -1,0 +1,21 @@
+{
+    "name": "moonlight/laravel-oss",
+    "description": "Aliyun OSS service provider for Laravel.",
+    "type": "library",
+    "license": "WTFPL",
+    "require": {
+        "php": ">=5.3",
+        "aliyuncs/oss-sdk-php": "^2.2"
+    },
+    "authors": [
+        {
+            "name": "Seven Yu",
+            "email": "git@yuqi.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Moonlight\\": "src/Moonlight"
+        }
+    }
+}
