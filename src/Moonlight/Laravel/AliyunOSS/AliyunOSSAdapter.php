@@ -35,6 +35,16 @@ class AliyunOSSAdapter
     }
 
     /**
+     * Get current bucket name.
+     *
+     * @return string
+     */
+    public function getBucket()
+    {
+        return $this->bucket;
+    }
+
+    /**
      * Pass other method calls down to the OSS client.
      *
      * @param string $method
