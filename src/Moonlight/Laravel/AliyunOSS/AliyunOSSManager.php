@@ -3,7 +3,7 @@
 namespace Moonlight\Laravel\AliyunOSS;
 
 use InvalidArgumentException;
-use OSS\OSSClient;
+use OSS\OssClient;
 
 
 class AliyunOSSManager
@@ -71,7 +71,7 @@ class AliyunOSSManager
         $endPoint = $config['endpoint'];
         $bucket = $config['bucket'];
 
-        $client = new OSSClient($accessId, $accessKey, $endPoint);
+        $client = new OssClient($accessId, $accessKey, $endPoint);
         $adapter = new AliyunOSSAdapter($client, $bucket);
 
         return $adapter;
