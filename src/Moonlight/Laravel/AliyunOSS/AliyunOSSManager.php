@@ -59,17 +59,20 @@ class AliyunOSSManager
      */
     protected function resolve($name)
     {
-        if (!isset($this->config[$name])) {
-            throw new InvalidArgumentException("OSS adapter [{$name}] not configured.");
-        }
-
         // retrieve the configuration
-        $config = $this->config[$name];
+        if (isset($this->config[$name])) {
+            // Use the config if exists
+            $config = $this->config[$name];
+            $bucket = $config['bucket'];
+        } else {
+            // Use default config, and treat `$name` as bucket name
+            $config = $this->config['oss'];
+            $bucket = $name;
+        }
 
         $accessId = $config['access_id'];
         $accessKey = $config['access_key'];
         $endPoint = $config['endpoint'];
-        $bucket = $config['bucket'];
 
         $client = new OssClient($accessId, $accessKey, $endPoint);
         $adapter = new AliyunOSSAdapter($client, $bucket);
